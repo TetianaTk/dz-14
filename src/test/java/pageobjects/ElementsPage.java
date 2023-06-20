@@ -17,7 +17,7 @@ public class ElementsPage extends BasePage{
 
   @Step("Element Buttons is clicked")
   public ButtonsPage getButtonsPage(){
-    driver.findElement(buttonsButton).click();
+    getElement(buttonsButton).click();
     return new ButtonsPage(driver);
   }
 

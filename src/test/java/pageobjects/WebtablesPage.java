@@ -32,31 +32,31 @@ public class WebtablesPage extends BasePage{
 
   @Step("Click Add button")
   public WebtablesPage getNewUserForm(){
-    driver.findElement(addButton).click();
+    getElement(addButton).click();
     return this;
   }
 
   @Step("Fill out user form [{0}, {1}, {2}, {3}, {4}, {5}]")
   public WebtablesPage fillOutUserForm(String firstName, String lastName, String userEmail,
       String age, String salary, String department){
-    driver.findElement(firstNameInput).sendKeys(firstName);
-    driver.findElement(lastNameInput).sendKeys(lastName);
-    driver.findElement(userEmailInput).sendKeys(userEmail);
-    driver.findElement(ageInput).sendKeys(age);
-    driver.findElement(salaryInput).sendKeys(salary);
-    driver.findElement(departmentInput).sendKeys(department);
+    getElement(firstNameInput).sendKeys(firstName);
+    getElement(lastNameInput).sendKeys(lastName);
+    getElement(userEmailInput).sendKeys(userEmail);
+    getElement(ageInput).sendKeys(age);
+    getElement(salaryInput).sendKeys(salary);
+    getElement(departmentInput).sendKeys(department);
     return this;
   }
 
   @Step("Click Add button")
   public WebtablesPage submitUserForm(){
-    driver.findElement(submitInput).click();
+    getElement(submitInput).click();
     return this;
   }
 
   @Step("Get all users")
   public List<WebElement> getUsers(){
-    return driver.findElements(divRows);
+    return getElements(divRows);
   }
 
   @Step("Get user by email: {userEmail}")
@@ -66,13 +66,13 @@ public class WebtablesPage extends BasePage{
 
   @Step("Click Edit user button")
   public WebtablesPage getUserForEdit(String userEmail){
-    driver.findElement(By.xpath(String.format(divEmailCells + editButton,userEmail))).click();
+    getElement(By.xpath(String.format(divEmailCells + editButton,userEmail))).click();
     return this;
   }
 
   @Step("Get user data by email: {userEmail}")
   public List<WebElement> getUserDataByEmail(String userEmail){
-    return driver.findElements(By.xpath(String.format(divEmailCells + divText,userEmail)));
+    return getElements(By.xpath(String.format(divEmailCells + divText,userEmail)));
   }
 
 

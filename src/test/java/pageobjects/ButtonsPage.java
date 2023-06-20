@@ -20,7 +20,7 @@ public class ButtonsPage extends BasePage{
 
   @Step("Button 'Click Me' is clicked")
   public ButtonsPage clickMeButtonAction(){
-    driver.findElement(clickMeButton).click();
+    getElement(clickMeButton).click();
     return this;
   }
 
