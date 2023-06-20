@@ -26,7 +26,7 @@ public class ButtonsPage extends BasePage{
 
   @Step("Getting message list")
   public List<WebElement> getMessages(){
-    return driver.findElements(clickMessages);
+    return getElements(clickMessages);
   }
 
 

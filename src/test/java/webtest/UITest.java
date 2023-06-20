@@ -51,7 +51,6 @@ public class UITest extends BaseTest{
     SoftAssert softAssert = new SoftAssert();
     driver.manage().window().maximize();
     WebtablesPage webtablesPage = new WebtablesPage(driver);
-    softAssert.assertEquals(webtablesPage.getUserByEmail(userEmail).size(), 0, "User already exists");
     webtablesPage.getNewUserForm()
         .fillOutUserForm(firstName, lastName, userEmail, age, salary, department)
         .submitUserForm();

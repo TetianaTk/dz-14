@@ -61,7 +61,7 @@ public class WebtablesPage extends BasePage{
 
   @Step("Get user by email: {userEmail}")
   public List<WebElement> getUserByEmail(String userEmail){
-    return driver.findElements(By.xpath(String.format(divEmailCells,userEmail)));
+    return getElements(By.xpath(String.format(divEmailCells,userEmail)));
   }
 
   @Step("Click Edit user button")
